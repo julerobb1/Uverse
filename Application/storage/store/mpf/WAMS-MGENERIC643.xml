@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WAMS-MGENERIC643" version="0" triggerset="[[ID:WAMS-MGENERIC643],[PROV:WAMS-MGENERIC643],[EXP:2025-08-26T23:59:59],[CH:643],[EVENT:page:storage://device/store/mpf/WAMS-MGENERIC643/GenericLaunch.xml?__MPF=L_0/3_sw_0]]" xsi:noNamespaceSchemaLocation="ManifestFileSchema.xsd">
+  <DeliveryMechanisms>
+    <WebServer id="1" url="https://tvmanifest.iac.asp.att.net/Manifests/Provider/WAMS/WAMS-MGENERIC643/20200309/" />
+  </DeliveryMechanisms>
+  <File name="GenericLaunch.xml" sha1="Z4Vaxu9RrIwR+040o6RVvYYec4M=" />
+</PackageManifest>

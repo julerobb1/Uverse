@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<uidescription version="3.0">
+	<MrmlPage id="GenericTrigger" width="854">
+		<Scripts>
+			<Script>
+				// <![CDATA[
+        
+   
+    var  enabled = false,
+	gdelayShow = 10000,
+        gdelayCheck = 200,
+		navDest = "",
+        LaunchChNum = -1;
+        
+        var channelOrig, channelNew;
+
+function init() {
+    channelOrig = getProperty("FsDS", "channel");
+    if (channelOrig == "9999") {
+        invokeAction(null, "Kill");
+        return false
+    }
+    checkChannelW()
+}
+
+function loadApp() {
+    if (checkChannelW()) {
+        invokeAction("","InitialDelay");
+      
+    }
+}
+
+function checkChannelW() {
+//alert("checkChannelW")
+    channelNew = getProperty("FsDS", "channel");
+    if (channelNew == "9999") {
+        invokeAction("", "Kill");
+        return false
+    }
+    if (channelNew != channelOrig) {
+        //invokeAction("", "Kill");
+        return true
+		}
+    
+    setTimeout("checkChannelW()", 60000);
+    return true
+}
+
+
+   function checkRez() {
+    //setProperty("Msg", "visible", "false");
+    var w = getProperty("SystemDS", "width")
+    alert("width: " + w);
+    if (w == "640") {
+        setProperty("GenericTrigger", "width", 640);
+       //setProperty("Msg", "width", 640);
+    }
+}
+
+function checkChannel() {
+
+          invokeAction("","RefreshFS");
+                        var b = getProperty("FsDS", "channel"),
+                            c = LaunchChNum;
+                            
+                    alert("b -" + b + "c - " + c );
+                    if(c == "-1")
+                    {
+                      alert("lcn set to " + b);
+                      LaunchChNum = b;
+                    }
+                    else if( c != b)
+                    {
+                      alert("diff channel");
+                      invokeAction("", "Kill");
+                    }
+                    else
+                      alert("still on launch channel");
+                }
+
+  function handleKey() {
+  
+  var a = window.readContext("keyname");
+  if(a="select"){
+     var b = getProperty("Panel", "visible");
+                            
+                            if (b == "false") {
+                                setProperty("Panel", "visible", "true");
+                                invokeAction("", "HideMessage_Delayed")
+                            } else {
+                                
+								goToVOD()
+								invokeAction("", "Kill");
+                            }
+			}
+		    else
+			{
+                 window.writeContext("handled", false);
+               if (a != "mute" && a != "volumeup" && a != "volumedown" && a != "play" && a != "pause" && a != "record" && a != "rec" && a != "skipfwd" && a != "skipback" && a != "rwd" && a != "ffwd" && a != "stop") {
+                alert("handle key action");
+                 invokeAction("", "Kill");
+		        }
+			}
+    }
+   
+
+
+function checkMsgToggle() {
+    alert("checkMesgToggle");
+    var gg = '/root/@active';
+    var hh = getProperty("HsiaCheckDS", gg);
+	alert("hh " + hh);
+    if(hh == 'off')
+    {
+      invokeAction("", "Kill");
+    }
+	else{
+    
+        //chk msg count
+        var pp = getProperty("HsiaCheckDS", '//msgs/msg');
+        alert("pp " + pp);
+        if(pp == null)
+        {
+          invokeAction("", "Kill");
+        }
+		else {
+		 var gp = "|"+ getProperty("FsDS", "channel") + "|";
+     alert("gp" + gp);
+    var ga ="//msgs/msg[contains(@chs,'"+gp+"')]";
+    alert("ga - " + ga);
+    var qq = getProperty("HsiaCheckDS", ga);
+    alert("qq - " + qq);
+    setProperty("L", "url", getProperty("HsiaCheckDS", '//msgs/msg/@iu'));
+	navDest = getProperty("HsiaCheckDS", '//msgs/msg/@nav')
+  if (!enabled) {
+    enable()
+	}
+		}
+	}
+    
+}
+
+function hideMsg()
+{
+  invokeAction("", "HideMsg");
+}
+
+function checkMsgDelayed()
+{
+    checkChannel();
+    invokeAction("", "ShowMsg");
+    setTimeout("validateChannel()", gdelayCheck);
+    //invokeAction("", "CheckChannel_Delayed");
+}
+
+function validateChannel()
+{
+  
+  checkChannel();
+  setTimeout("validateChannel()", gdelayCheck);
+  //invokeAction("", "CheckChannel_Delayed");
+}
+
+function exit()
+{
+    alert("killlayer")
+    invokeAction("", "killlayer");
+
+}
+
+
+ function enable() {
+                    alert("enable");
+                   /* if (debug) {
+                     setProperty("DebugLabel", "text", "")
+                    }*/
+                    var a = getProperty("Panel", "visible");
+                        checkChannel()
+                        alert("\n checkchannel passed");
+                        if (!enabled) {
+                            alert("\n setting enabled true");
+                            enabled = true;
+                           
+                            alert("\n set cta image");
+                            setProperty("FocusButton", "visible", "true");
+                            //setProperty("DebugLabel", "text", getProperty("DebugLabel", "text") + "\n click ok");
+                            if (a == "false") {
+							 alert("ShowMessage_ShortDelayed");
+                                invokeAction("", "ShowMessage_ShortDelayed")
+                            }
+                        }
+                       // invokeAction("", "CheckMastersDelayed")
+                    
+                        //setProperty("DebugLabel", "text", getProperty("DebugLabel", "text") + "\nvalidation failed");
+                        //invokeAction("","Kill")
+                   
+                }
+        
+		function goToVOD() {
+                    
+                    alert("gotovod" + navDest)
+                    invokeAction("", "NavVod", navDest)
+                }
+          
+        // ]]>
+			</Script>
+		</Scripts>
+		<DataSource id="HsiaCheckDS" />
+		<DataSource id="FsDS" uri="local://tv" autoload="true" />
+		<DataSource id="SystemDS" uri="local://system-info" />
+		<DataSource id="UserDS" uri="local://user-data" />
+		<Text id="Msg" width="612" visible="false" wrap="true" justification="center" fontstyle="Bold16" foreground="argb(235,235,235,255)" height="342" layout="center" top="69" left="121" padding="rect(30,25,30,30)" background="argb(204,0,0,0)">
+		</Text>
+
+		<Panel id="Panel" top="310" left="-10" visible="false" showanimations="MediumFadeIn" hideanimations="MediumFadeOut">
+
+			<Image id="L" keepaspectratio="false" loadasync="false" alpha="0.9" height="70" width="499">
+
+			</Image>
+
+		</Panel>
+
+		<RadioButton id="FocusButton" top="-1000">
+			<Actions>
+				<Event type="onkey" action="HandleKey" />
+				<Event type="onkey:down" action="HandleKey" />
+				<Event type="onkey:left" action="HandleKey" />
+				<Event type="onkey:right" action="HandleKey" />
+				<Event type="onkey:up" action="HandleKey" />
+			</Actions>
+		</RadioButton>
+		<Text id="MsgHash" top="10" left="50" visible="false">-1</Text>
+		<Text id="DebugLabel" top="10" left="50" visible="false">
+			Debug v2
+		</Text>
+		<Actions>
+			<Action name="PingMsgManager" type="ping" data="Fox" onfail="CheckHsia" onsuccess="Kill" />
+			<Action name="CheckHsia" type="refresh" target="HsiaCheckDS" data="http://iptvwams-cdn.att.net/WAMS/Data/Triggers/Generic/spidermandata.xml?__MPF=t_5000" />
+			<Action name="RefreshFS" type="refresh"  target="FsDS" />
+			<Action name ="Kill" type="script" function="exit" />
+			<Action name="killlayer" type="navigate" data="page:exit?__MPFLayer=." />
+			<!--<Action name="CheckChannel_Delayed" type="timeout" delay="200" action="ValidateChannel"/>
+      <Action name="ValidateChannel"  type="script" function="validateChannel" />-->
+			<Action name="CheckChannel"  type="script" function="checkChannel" />
+			<Action name="ShowMsg_Delayed" type="timeout" delay="2000" action="CheckMsgDelayed"/>
+			<Action name="checkMsgToggle" type="script" function="checkMsgToggle" />
+			<Action name="InitialDelay" type="timeout" delay="2000" action="checkMsgToggle"/>
+			<Action name="ShowMsg" propagate="false" type="show" target="Msg" />
+			<Action name="CheckMsgDelayed"  type="script" function="checkMsgDelayed" />
+			<Action name="HideMsg" type="hide" target="Msg" />
+			<Action name="CheckRez"  type="script" function="checkRez" />
+			<Action name="showdebug"  type="show" target="DebugLabel" />
+			<Action name="HandleKey" propagate="false" type="script" function="handleKey" />
+			<Action name="SetButtonFocus" type="focus" target="FocusButton" />
+			<Action name="Init" type="script" function="init"/>
+			<Action name="LoadApp" type="script" function="loadApp"/>
+			<Action name="LoadAppDelay" type="timeout" delay="5000" action="LoadApp"/>
+			<Action name="ShowMessage" type="show" target="Panel" />
+			<Action name="ShowMessage_ShortDelayed" type="timeout"  delay="5000" action="ShowMessage HideMessage_Delayed" />
+			<Action name="ShowMessage_Delayed" type="timeout" delay="10000" action="ShowMessage HideMessage_Delayed" />
+			<Action name="NavVod" type="navigate" />
+			<Action name="HideMessage" type="hide" target="Panel" />
+			<Action name="HideMessage_Delayed" type="timeout" delay="5000" action="HideMessage ShowMessage_Delayed" />
+			<Action name="CheckMastersDelayed" type="timeout" key="CheckMasters" target="GenericTrigger" delay="5000" action="CheckMasters" />
+
+			<Event type="onenter" action="CheckHsia" />
+			<Event type="onleave" action="Kill" />
+			<Event type="onkey:0" action="HandleKey" />
+			<Event type="onkey:1" action="HandleKey" />
+			<Event type="onkey:2" action="HandleKey" />
+			<Event type="onkey:3" action="HandleKey" />
+			<Event type="onkey:4" action="HandleKey" />
+			<Event type="onkey:5" action="HandleKey" />
+			<Event type="onkey:6" action="HandleKey" />
+			<Event type="onkey:7" action="HandleKey" />
+			<Event type="onkey:8" action="HandleKey" />
+			<Event type="onkey:9" action="HandleKey" />
+			<Event type="onkey:down" action="HandleKey" />
+			<Event type="onkey:left" action="HandleKey" />
+			<Event type="onkey:right" action="HandleKey" />
+			<Event type="onkey:up" action="HandleKey" />
+			<Event type="onkey" action="HandleKey" />
+			<Event type="onerror" action="Kill" target="HsiaCheckDS" />
+			<Event type="onready" action="Init LoadAppDelay" target="HsiaCheckDS" />
+			<Event type="onminutetick" action="CheckHsia" />
+
+		</Actions>
+	</MrmlPage>
+</uidescription>

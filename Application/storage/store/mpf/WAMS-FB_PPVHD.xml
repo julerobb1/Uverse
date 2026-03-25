@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WAMS-FB_PPVHD" version="0" triggerset="[[ID:WAMS-FB_PPVHD],[PROV:WAMS-FB_PPVHD],[EXP:2025-11-08T23:59:00],[BEG:2016-09-08T00:00:00],[END:2016-09-08T23:59:00],[REPEAT:daily],[CH:1636],[EVENT:page:storage://device/store/mpf/WAMS-PPVHD/PPVTriggerProdBG_new.xml?__MPF=L_0/-2_sw_0]]" xsi:noNamespaceSchemaLocation="ManifestFileSchema.xsd" />

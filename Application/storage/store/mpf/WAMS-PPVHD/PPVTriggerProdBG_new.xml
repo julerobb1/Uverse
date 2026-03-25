@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uidescription version="3.0">
+	<MrmlPage id="PPVTriggerBG" width="854">
+		<Scripts><Script>
+// <![CDATA[
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('4 B=[2a,1i,1g,1e,N,1f,1m,1n,1l],z=["1j-1k-19-17-1c","1a-1b-1d-1o-1D","1I-1G-1s-1q-1x"],1v="";4 G="";4 1u=3;8 M(){4 b=9("u","v");7(G!=b){w()}}8 1w(){M();r("14","12")}8 Q(b){5("1y");5(b);7(b.c("\'")==-1){C"\'"+b+"\'"}7(b.c(\'"\')==-1){C\'"\'+b+\'"\'}C"1p(\'"+b.O(/\'/g,"\', \\"\'\\", \'")+"\')"}8 w(){r("10","1r")}8 1t(){r("10","1z")}8 1F(){4 k=9("1H","1J");T(4 f S z){7(k==z[f]){H("5","1B","U");W}}5("1A 0/-2 1C");4 e=9("u","v"),j=1E;T(4 f S B){7(e==B[f]){G=e;j=U;W}}7(!j){5("w");w()}F{4 n=9("u","s"),e=9("u","v");5("F 18");5("s"+n);5("v"+e);7(n.c("I t")==0||n.c("J a")==0||n.c("6-x")==0||n.c("6 y")==0||n.c("6-E")==0){4 k=/(?:I t|J a|6-x|6 y|6 x|6-E) \\d+\\/\\d+:? (.*?) 1h? \\d+:\\d+/i.1K(n)[1];P(k);k=Q(k);P("2g"+k);4 l="/L/K/R[Y-X(@s,"+k+")]/@A";4 o="/L/K/R[Y-X(@s,"+k+")]/@D";4 m=9("V",l);7(e=="N"){m=m.2c();m=m.O("2b","2i")}4 p=9("V",o);4 q="2o://2q.2k.2j.2n.2m/2f/1R/1T/"+m;5("Z A "+q);5("Z D "+p);H("1U","1Q",q);r("","1L","#1P?D="+p)}F{5("25 24 11 26 27 I t, J a, 6-x, 6 y 13 6-E")}}r("14","12")}8 1X(){5("A 1W 1Y 22")}8 1Z(){5("1S 23 28 16. 1O 16 1N 11 1M t 1V 13 2l 2p 2r")}4 h=[];8 5(b){h.29(b);7(h.15>20){h=h.2d(h.15-21)}H("5","2h",h.2e("\\n"))};',62,152,'||||var|debug|Pre|if|function|getProperty|||indexOf|||||debugMessages||||||||||invokeAction|title|to|FsDS|channel|exit|order|Orden|debugStbs|bg|validChannels|return|time|Order|else|launchChannel|setProperty|Go|Vaya|ProgramGroup|PPVData|checkChannel|107|replace|alert|xPathString|Program|in|for|true|PPVDS|break|with|starts|setting|PPVTriggerBG|not|CheckFocusLayer|or|PPVTrigger|length|image|9585|case|474d|18a41f48|bd34|4d4aae36ffae|47fe|106|1102|105|at|104|91b24bbd|b136|1636|1103|636|97af|concat|a7fd|Exit|4c5d|refresh|retries|nav|CheckFocus|22c05364e9c3|xpathstring|RefreshDS|layer|visible|checkexit|7700d2475d73|false|checkExit|72da|SysDS|13efc6e0|DeviceId|exec|EventAction|uploaded|is|Either|ppv|url|AlbumImage|Error|805|TitleBG|wams|should|StartShowBG|be|ShowBGError|||seen|loading|does|Title|have|either|the|push|102|eng|toLowerCase|slice|join|MediaServer|hi|text|spa|asp|iac|texture|net|att|http|limit|mss|exceeded'.split('|'),0,{}))
+
+// ]]>
+</Script></Scripts>
+        
+        
+
+        <DataSource id="PPVDS" uri="https://wams.iac.asp.att.net/WAMSPresentation/MPFTemplateBuilder.aspx?id=9192&amp;providerid=805"/>
+        
+
+
+
+        <DataSource id="FsDS" uri="local://tv"/>
+        <DataSource id="SysDS" uri="local://system-info"/>
+        <Image id="TitleBG" alpha="0" height="480" width="854">
+			<Actions><Event type="onerror" action="ShowBGError"/><Event type="onready" action="ShowTitleBG"/></Actions>
+		</Image>
+
+        <Text id="debug" fontstyle="reg14" top="50" left="50" visible="false" width="754">
+
+		</Text>
+    <Actions><Action name="CheckFocus" type="script" function="CheckFocus"/><Action name="CheckFocusLayer" type="timeout" key="CheckFocus" target="PPVTrigger" delay="2000" action="CheckFocus"/><Action name="Exit" type="navigate" data="page:exit?__MPFLayer=."/><Action name="CheckExit" type="script" function="checkExit"/><Action name="RefreshDS" type="refresh" target="PPVDS" data="https://wams.iac.asp.att.net/WAMSPresentation/MPFTemplateBuilder.aspx?id=9192&amp;providerid=805"/><Action name="SetTitleBGUrl" type="set" target="TitleBG"/><Action name="SetTitleBGAlpha" type="set" target="TitleBG" property="alpha" data="-1"/><Action name="ShowTitleBG"><Action type="script" function="StartShowBG"/><Action type="timeout" delay="200" action="FadeInTitleBG"/><Action type="timeout" delay="200" action="SetTitleBGAlpha"/><Action type="navigate" data="page:https://wams.iac.asp.att.net/WAMSPresentation/MPFTemplateBuilder.aspx?id=9193&amp;providerid=805&amp;__MPFLayer=0/-1"/></Action><Action name="FadeInTitleBG" type="animation" target="TitleBG" data="MediumFadeIn"/><Action name="HideShowTitleBG" type="animation" target="TitleBG" data="MediumFadeOut"/><Action name="EventAction" type="event" event=""/><Action name="ShowBGError" type="script" function="ShowBGError"/><Event type="onerror" action="RefreshDS" target="PPVDS"/><Event type="onready" action="CheckExit" target="PPVDS"/></Actions>
+	</MrmlPage>
+</uidescription>

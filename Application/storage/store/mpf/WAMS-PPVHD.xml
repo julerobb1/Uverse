@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WAMS-PPVHD" version="0" triggerset="[[ID:WAMS-PPVHD],[PROV:WAMS-PPVHD],[EXP:2025-03-05T23:59:00],[BEG:2016-01-05T00:00:00],[END:2016-01-05T23:59:00],[REPEAT:daily],[CHR:1102;1103],[EVENT:page:storage://device/store/mpf/WAMS-PPVHD/PPVTriggerProdBG_new.xml?__MPF=L_0/-2_sw_0]]" xsi:noNamespaceSchemaLocation="ManifestFileSchema.xsd">
+  <DeliveryMechanisms>
+    <WebServer id="1" url="https://tvmanifest.iac.asp.att.net/Manifests/Provider/WAMS/WAMS-PPVHD/20200227/" />
+  </DeliveryMechanisms>
+  <File name="PPVTriggerProdBG_new.xml" sha1="OC5Vkk9cT+pcpn6lnxUDVLTH5lg=" />
+</PackageManifest>

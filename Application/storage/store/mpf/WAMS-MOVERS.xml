@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WAMS-MOVERS" version="0" triggerset="[[ID:WAMS-MOVERS],[PROV:WAMS-MOVERS],[EXP:2025-03-05T23:59:00],[BEG:2016-01-05T00:00:00],[END:2016-01-05T23:59:00],[REPEAT:daily],[CC4:WAMS03],[#@WAMS03:],[CHR:1;9999],[EVENT:page:storage://device/store/mpf/WAMS-MOVERS/moversTrigger.xml?__MPFLayer=2/1]]" xsi:noNamespaceSchemaLocation="ManifestFileSchema.xsd">
+  <DeliveryMechanisms>
+    <WebServer id="1" url="https://tvmanifest.iac.asp.att.net/Manifests/Provider/WAMS/WAMS-MOVERS/20220207/" />
+  </DeliveryMechanisms>
+  <File name="moversTrigger.xml" sha1="os14hH34Y5Nu5voTJI+eTqjGsFE=" />
+</PackageManifest>

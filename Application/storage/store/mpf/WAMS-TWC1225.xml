@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WAMS-TWC1225" version="0" triggerset="[[ID:WAMS-TWC1225],[PROV:WAMS-TWC1225],[EXP:2025-03-05T23:59:00],[BEG:2016-01-05T00:00:00],[END:2016-01-05T23:59:00],[REPEAT:daily],[CH:1225],[EVENT:page:storage://device/store/mpf/WAMS-TWC1225/trigger.xml?__MPFLayer=2/1]]" xsi:noNamespaceSchemaLocation="ManifestFileSchema.xsd">
+  <DeliveryMechanisms>
+    <WebServer id="1" url="https://tvmanifest.iac.asp.att.net/Manifests/Provider/WAMS/WAMS-TWC1225/20200229/" />
+  </DeliveryMechanisms>
+  <File name="trigger.xml" sha1="rKrvvbM7HrDYfrpI3i5TNtq3pWE=" />
+</PackageManifest>

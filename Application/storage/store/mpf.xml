@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ApplicationManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="0" version="1" contentVersion="MIAMFL">
+  <Package name="NavigationTargets" url="https://tvmanifest.iac.asp.att.net/Manifests/Master/MAT1.3_VS/2024_08_08_20_45_01_26/MIAMFL/NavigationTargets_pkgmanifest.xml" version="1" sha1="33cqa0NgTYBeERZs7PF2F2csgyQ=" />
+  <Package name="WAMS-CTOGENERICHD" url="https://tvmanifest.iac.asp.att.net/Manifests/Master/MAT1.3_VS/2024_08_08_20_45_01_26/MIAMFL/WAMS-CTOGENERICHD.xml" version="0" sha1="vOBsMbRiA1F2mRiMHuwctAVg9Bw=" />
+  <Package name="WAMS-CTOGENERICSD" url="https://tvmanifest.iac.asp.att.net/Manifests/Master/MAT1.3_VS/2024_08_08_20_45_01_26/MIAMFL/WAMS-CTOGENERICSD.xml" version="0" sha1="r+H8jczodZcDhPAm6Ttfo2nvWV8=" />
+  <Package name="WAMS-FB_PPVHD" url="https://tvmanifest.iac.asp.att.net/Manifests/Master/MAT1.3_VS/2024_08_08_20_45_01_26/MIAMFL/WAMS-FB_PPVHD.xml" version="0" sha1="WmlvtLcf6J1/DuPPcjVS1dIzOHI=" />
+  <Package name="WAMS-FB_PPVSD" url="https://tvmanifest.iac.asp.att.net/Manifests/Master/MAT1.3_VS/2024_08_08_20_45_01_26/MIAMFL/WAMS-FB_PPVSD.xml" version="0" sha1="r14RnJBKGhDcvBom1ZWoVqdlHYU=" />
+  <Package name="WAMS-MGENERIC643" url="https://tvmanifest.iac.asp.att.net/Manifests/Master/MAT1.3_VS/2024_08_08_20_45_01_26/MIAMFL/WAMS-MGENERIC643.xml" version="0" sha1="StbqfzxWwPBgJEio5sXNGMBDqfY=" />
+  <Package name="WAMS-MOVERS" url="https://tvmanifest.iac.asp.att.net/Manifests/Master/MAT1.3_VS/2024_08_08_20_45_01_26/MIAMFL/WAMS-MOVERS.xml" version="0" sha1="Ruvo53IGRMpojNbVwyWfo9emdhg=" />
+  <Package name="WAMS-PPVHD" url="https://tvmanifest.iac.asp.att.net/Manifests/Master/MAT1.3_VS/2024_08_08_20_45_01_26/MIAMFL/WAMS-PPVHD.xml" version="0" sha1="x42ssOgw/AbgMVbozQnM3e2SqrI=" />
+  <Package name="WAMS-PPVSD" url="https://tvmanifest.iac.asp.att.net/Manifests/Master/MAT1.3_VS/2024_08_08_20_45_01_26/MIAMFL/WAMS-PPVSD.xml" version="0" sha1="DMC0m0fCX1QhRoIc2sPRenZVytc=" />
+  <Package name="WAMS-TWC1225" url="https://tvmanifest.iac.asp.att.net/Manifests/Master/MAT1.3_VS/2024_08_08_20_45_01_26/MIAMFL/WAMS-TWC1225.xml" version="0" sha1="TSwuPCparavwugipk7ZT9KhqF6E=" />
+  <Package name="WAMS-TWC225" url="https://tvmanifest.iac.asp.att.net/Manifests/Master/MAT1.3_VS/2024_08_08_20_45_01_26/MIAMFL/WAMS-TWC225.xml" version="0" sha1="LNPKxUWr/rdPEgRk2wx+P2SP7QE=" />
+</ApplicationManifest>

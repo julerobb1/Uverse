@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="NavigationTargets" version="1" xsi:noNamespaceSchemaLocation="ManifestFileSchema.xsd">
+  <DeliveryMechanisms>
+    <WebServer id="1" url="https://tvmanifest.iac.asp.att.net/Manifests/Provider/Navigation/NavigationTargets_2.6.1/" />
+  </DeliveryMechanisms>
+  <File name="NavigationTargets_override.xml" sha1="VwMOZfzuIJs2MX0v2ZZkBWXBS5M=" />
+  <File name="NavigationTargets_override2.xml" sha1="Om+9hrLnTlAUf8yrFTqhdB8J3sU=" />
+  <File name="NavigationTargets_override3.xml" sha1="m0mf8dYjcq+3OTOnLgubpcvlrBg=" />
+</PackageManifest>

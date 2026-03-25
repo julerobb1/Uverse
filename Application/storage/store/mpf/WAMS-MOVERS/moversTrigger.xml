@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<uidescription version="3.0">
+	<MrmlPage id="PreloadPage" width="854" appid="channelInfo">
+		<Scripts><Script>
+// <![CDATA[
+
+	      var channel, name, channelNum, channelName, channelShortName;
+
+	      function init(){
+	          //alert("VERSION 0.01");
+	          setTimeout("init2()",1000);
+	      }
+
+	      function init2() {
+
+	          if (getProperty("S", "Width") == "640") {
+	              setProperty("PreloadPage", "width", "640");
+	              setProperty("launchPanel", "left", "-107");
+	          }
+              channel=getProperty("FullScreenDS","channel");
+              name=getProperty("FullScreenDS","stationShortName");
+              if(channel=="9999"){
+                  mediaDescriptor=getProperty("FullScreenDS","tuneUrl").split("mediadescriptor=")[1];
+                  name=getProperty("DvrDS","byTitle/recorded/recording[@mediaDescriptor='"+mediaDescriptor+"']/@callLetters");
+              }
+              
+              var a=getProperty("ChannelMapName","text");
+              var b=(a.split("_"))[0];              
+              name = name.toUpperCase();
+              name = name.replace(/\s/g, "");
+              name = name.replace(/HD/g, ""); 
+              channelShortName = getProperty("VHOinfo", "//vhoMap/channel[@name='" + name + "']/@name");
+              
+               if(channelShortName!=name){
+                   //alert("EXITING1");
+                   invokeAction(null, "exit");
+		       }
+               invokeAction(null,"focus");
+               invokeAction(null, "showButton");
+               setTimeout("invokeAction(null, 'exit')", 7000);
+               checkChannel();
+           }
+	
+		   function checkChannel(){
+		       channel=getProperty("FullScreenDS","channel");
+		       name = getProperty("FullScreenDS", "stationShortName");
+		       name = name.toUpperCase();
+		       name = name.replace(/\s/g, "");
+		       name = name.replace(/HD/g, "");
+               if(channel=="9999"){mediaDescriptor=getProperty("FullScreenDS","tuneUrl").split("mediadescriptor=")[1];
+                   channel=getProperty("DvrDS","byTitle/recorded/recording[@mediaDescriptor='"+mediaDescriptor+"']/@channel");
+                   name = getProperty("DvrDS", "byTitle/recorded/recording[@mediaDescriptor='" + mediaDescriptor + "']/@callLetters");
+                   if (name != channelShortName) {
+                       invokeAction(null, "exit");
+		            }
+		        }
+
+		        else{
+		            if(name!=channelShortName){
+		                invokeAction(null,"exit");
+		            }
+		        }
+               setTimeout("checkChannel()",1000);
+		   }
+
+		   function goTo() {
+		       alert("go... ");
+		       var a = window.readContext("keyname");
+		       if (a != "select") {
+		           window.writeContext("handled", false);
+		       } else {
+		           if (a == "select") {
+		               invokeAction(null, "hideButton");
+		               window.writeContext("handled", true);
+		               invokeAction(null, "Navigate", "https://renonaswsvip.asp.att.net/WAMSPresentation/MPFTemplateBuilder.aspx?id=6949&providerid=544&RemoveXRAWrapper=true&__MPFLayer=0");
+		           }
+		       }
+		   }
+
+// ]]>
+</Script></Scripts>
+	
+        <DataSource id="FullScreenDS" uri="local://tv" />
+        <DataSource id="DvrDS" uri="local://dvr" />
+        <Text id="SystemDS_Label" visible="false" datasource="{Binding Path=FullScreenDS}">
+
+		</Text>
+        <DataSource id="S" uri="local://system-info" />
+
+        <DataSource id="VHOinfo">
+                <vhoMap>
+                    <channel name="TNT"></channel>
+                    <channel name="TBS"></channel>
+                    <channel name="USA"></channel>
+                    <channel name="E!"></channel>
+                    <channel name="TVLD"></channel>
+                    <channel name="COM"></channel>
+                    <channel name="SPKE"></channel>
+                    <channel name="SYFY"></channel>
+                    <channel name="BET"></channel>
+                    <channel name="TV 1"></channel>
+                    <channel name="A&amp;E"></channel>
+                    <channel name="BRAVO"></channel>
+                    <channel name="CNN"></channel>
+                    <channel name="HLN"></channel>
+                    <channel name="FNC"></channel>
+                    <channel name="MSNBC"></channel>
+                    <channel name="TLC"></channel>
+                    <channel name="BIO"></channel>
+                    <channel name="TDIS"></channel>
+                    <channel name="NICK"></channel>
+                    <channel name="TOON"></channel>
+                    <channel name="LIFE"></channel>
+                    <channel name="OXGN"></channel>
+                    <channel name="HGTV"></channel>
+                    <channel name="FOOD"></channel>
+                    <channel name="MTV"></channel>
+                    <channel name="MTV2"></channel>
+                    <channel name="VH1"></channel>
+                    <channel name="ESPN"></channel>
+                    <channel name="ESPNH2"></channel>
+                    <channel name="AMC"></channel>
+                    <channel name="FAM"></channel>
+                    <channel name="TRAVEL"></channel>
+                    <channel name="TRU"></channel>
+                </vhoMap>
+          </DataSource>
+
+        <DataSource id="chanInfo" uri="app://channelInfo" />
+        
+        <button id="focusButton" visible="false" top="-1000"><Actions><Event type="onkey" action="goTo" /></Actions></button>
+	
+        <Panel id="launchPanel" visible="false" height="480" width="854" showanimations="MediumFadeIn" hideanimations="MediumFadeOut">
+			
+            <Text id="T" fontstyle="Reg18" wrap="false" top="410" left="355" height="30">
+				Press
+			</Text>
+            <Image id="image" url="file:///Notification.Icon.OK.png" top="413" left="396" height="20" width="20">
+
+			</Image>
+            <Text id="TVLabel1" fontstyle="Reg18" wrap="false" top="410" left="418" height="30">
+				for
+			</Text>
+            <Text id="TVLabel2" fontstyle="Reg18" wrap="false" top="430" left="340" height="30">
+				more information
+			</Text>
+        
+		</Panel>
+
+        <Panel id="content" height="480" width="854" showanimations="MediumFadeIn" hideanimations="MediumFadeOut">
+			
+            <Text id="ChannelMapName" top="200" left="100" visible="false" datasource="{Binding Source=S,Path=ChannelMapName}" width="500">
+
+			</Text>
+            <Text id="CLLICode" top="230" left="100" width="500">
+
+			</Text>
+            <Text id="CLLICode8" top="260" left="100" width="500">
+
+			</Text> 
+        
+		</Panel>
+
+        <Text id="DEBUG_Label" fontstyle="reg14" top="50" left="50" visible="false" width="700">
+
+		</Text>
+        
+        <Video id="TVvideo" showbusyindicator="true" visible="false">
+
+		</Video>
+		
+    
+        <Actions><Action name="goTo" type="script" function="goTo" /><Action name="focus" type="focus" target="focusButton" /><Action name="init" type="script" function="init" /><Action name="showButton" type="show" target="launchPanel focusButton" /><Action name="hideButton" type="hide" target="launchPanel focusButton" /><Action name="Navigate" type="navigate" /><Action name="exit" type="navigate" data="page:exit" /><Event type="onenter" action="init" /></Actions>
+	</MrmlPage>
+</uidescription>

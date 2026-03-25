@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WAMS-CTOGENERICHD" version="0" triggerset="[[ID:WAMS-CTOGENERICHD],[PROV:WAMS-CTOGENERICHD],[EXP:2027-09-08T23:59:59],[CHR:9110;9112],[EVENT:page:storage://device/store/mpf/WAMS-CTOGENERICSD/Spiderman.xml?__MPF=L_0/3_sw_0]]" xsi:noNamespaceSchemaLocation="ManifestFileSchema.xsd" />

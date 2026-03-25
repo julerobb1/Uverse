@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Navigation Targets Override version: 2.6.1 uverse-sas.att.com-->
+<mappings>
+   <!-- Search targets -->
+   <target name="search" location="page:http://uverse-sas.att.com/Search/?__MPF=t_300000"/>
+   <target name="searchresultsforaperson" location="page:http://uverse-sas.att.com/Search/Search/?ClientType=People&amp;__MPF=t_300000"/>
+   <target name="searchpeople" location="page:http://uverse-sas.att.com/Search/Search/?ClientType=People&amp;__MPF=t_300000"/>
+   <target name="searchchannels" location="page:http://uverse-sas.att.com/Search/Search/?ClientType=CallLetters&amp;__MPF=t_300000"/>
+   <target name="searchtitles" location="page:http://uverse-sas.att.com/Search/Search/?ClientType=Title&amp;__MPF=t_300000"/>
+   <target name="othershowingsseries" location="page:http://uverse-sas.att.com/Search/Series/OtherShowings?__MPF=t_300000"/>
+   <target name="othershowingsprogram" location="page:http://uverse-sas.att.com/Search/Asset/OtherShowings?__MPF=t_300000"/>
+   <!-- Storefront targets -->
+   <target name="vodstore" location="page:http://uverse-sas.att.com/VodStorefront.main/?__MPF=t_300000"/>
+   <target name="vodprograminfo" location="page:http://uverse-sas.att.com/VodStorefront.main/asset/item/?__MPF=t_300000"/>
+   <target name="svodinfo" location="page:http://uverse-sas.att.com/VodStorefront.main/asset/item/?__MPF=t_300000"/>
+   <target name="vodpackage" location="page:http://uverse-sas.att.com/VodStorefront.main/asset/item/?__MPF=t_300000"/>
+   <target name="vodcurrentrentals" location="page:http://uverse-sas.att.com/VodStorefront.main/home/index/MyVideos?__MPF=t_300000"/>
+   <target name="vodstoredownloads" location="page:http://uverse-sas.att.com/VodStorefront.main/home/index/MyVideos?__MPF=t_300000"/>
+   <target name="searchvod" location="page:http://uverse-sas.att.com/VodStorefront.main/?__MPF=t_300000"/>
+   <!-- Storefront custom targets -->
+   <target name="vodcategory" location="page:http://uverse-sas.att.com/VodStorefront.main/category?__MPF=t_300000"/>
+   <target name="vodtvseries" location="page:http://uverse-sas.att.com/VodStorefront.main/TV/Series?__MPF=t_300000"/>
+   <target name="vodtoppicks" location="page:http://uverse-sas.att.com/VodStorefront.main/home/index/Menu_TopPicks?__MPF=t_300000"/>
+   <target name="vodfeatured" location="page:http://uverse-sas.att.com/VodStorefront.main/home/index/Menu_Featured?__MPF=t_300000"/>
+   <target name="voduversemovies" location="page:http://uverse-sas.att.com/VodStorefront.main/home/index/Menu_UverseMovies?__MPF=t_300000"/>
+   <target name="vodscreenpack" location="page:http://uverse-sas.att.com/VodStorefront.main/home/index/Menu_UverseScreenPack?__MPF=t_300000"/>
+   <target name="vodfree" location="page:http://uverse-sas.att.com/VodStorefront.main/home/index/Menu_FreeShows?__MPF=t_300000"/>
+   <target name="vodpremium" location="page:http://uverse-sas.att.com/VodStorefront.main/home/index/Menu_Premium?__MPF=t_300000"/>
+   <target name="vodsubscription" location="page:http://uverse-sas.att.com/VodStorefront.main/home/index/Menu_Subscription?__MPF=t_300000"/>
+   <target name="vodevents" location="page:http://uverse-sas.att.com/VodStorefront.main/home/index/Menu_Events?__MPF=t_300000"/>
+   <target name="vodhelp" location="page:https://wams.iac.asp.att.net/WAMSPresentation/Launch.aspx?providerid=745"/>
+   <target name="vodadult" location="page:http://uverse-sas.att.com/VodStorefront.Adult/?__MPF=t_300000"/>
+   <target name="vodadultprograminfo" location="page:http://uverse-sas.att.com/VodStorefront.Adult/asset/item/?__MPF=t_300000"/>
+   <target name="vodadultcategory" location="page:http://uverse-sas.att.com/VodStorefront.Adult/category?__MPF=t_300000"/>
+   <!-- version target -->
+   <target name="navtargetversion" location="MANIFEST: 2.6.1 - uverse-sas.att.com (5min)"/>
+</mappings>

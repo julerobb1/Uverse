@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WAMS-CTOGENERICSD" version="0" triggerset="[[ID:WAMS-CTOGENERICSD],[PROV:WAMS-CTOGENERICSD],[EXP:2027-09-08T23:59:59],[CHR:9101;9103],[EVENT:page:storage://device/store/mpf/WAMS-CTOGENERICSD/Spiderman.xml?__MPF=L_0/3_sw_0]]" xsi:noNamespaceSchemaLocation="ManifestFileSchema.xsd">
+  <DeliveryMechanisms>
+    <WebServer id="1" url="https://tvmanifest.iac.asp.att.net/Manifests/Provider/WAMS/WAMS-CTOGENERICSD/20220708/" />
+  </DeliveryMechanisms>
+  <File name="Spiderman.xml" sha1="QQVcB1AbfIq18pQLd48k7nyBi3o=" />
+</PackageManifest>

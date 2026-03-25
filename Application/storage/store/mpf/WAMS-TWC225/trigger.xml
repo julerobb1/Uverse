@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<uidescription version="3.0">
+	<MrmlPage id="PreloadPage" width="854">
+		<Scripts><Script>
+// <![CDATA[
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('d 7,8;5 o(){7=f("g","i");3(7=="h"){1(2,"4");b 6}9()}5 s(){3(9()){1(2,"z","C:t://p.w.x.v.u/B/A.y?m=n&l=j&k=c&r=0&q=D");1(2,"4")}}5 9(){8=f("g","i");3(8=="h"){1(2,"4");b 6}3(8!=7){1(2,"4");b 6}P("9()",V);b c}5 T(){d a=e.O("H");e.I("G",6);3(a!="M"&&a!="N"&&a!="L"&&a!="J"&&a!="K"&&a!="R"&&a!="F"&&a!="E"&&a!="U"&&a!="W"&&a!="Q"&&a!="S"){1(2,"4")}};',59,59,'|invokeAction|null|if|exit|function|false|channelOrig|channelNew|checkChannel||return|true|var|window|getProperty|FullScreenDS|9999|channel|7988|RemoveXRAWrapper|id|providerId|605|init|wams|__MPF|__MPFLayer|loadApp|https|net|att|iac|asp|aspx|Navigate|MPFTemplateBuilder|WAMSPresentation|page|sw_0|skipfwd|rec|handled|keyname|writeContext|play|pause|volumedown|mute|volumeup|readContext|setTimeout|ffwd|record|stop|buttonPress|skipback|1000|rwd'.split('|'),0,{}))
+
+// ]]>
+</Script></Scripts>
+        
+        <DataSource id="FullScreenDS" uri="local://tv" />
+        <DataSource id="DvrDS" uri="local://dvr" />
+        <Text id="SystemDS_Label" visible="false" datasource="{Binding Path=FullScreenDS}">
+
+		</Text>
+        <DataSource id="S" uri="local://system-info" />
+
+        <Button id="focusButton" top="-1000"><Actions><Event type="onkey" action="ButtonPress" /></Actions></Button>
+
+        <Text id="DEBUG_Label" fontstyle="reg14" top="50" left="50" visible="false" width="700">
+			page:https://wams.iac.asp.att.net/WAMSPresentation/MPFTemplateBuilder.aspx?providerId=605&amp;id=7988&amp;RemoveXRAWrapper=true&amp;__MPFLayer=0&amp;__MPF=sw_0
+		</Text>
+
+        <Video id="TVvideo" showbusyindicator="true" visible="false">
+
+		</Video>
+
+        
+    <Actions><Action name="ButtonPress" type="script" function="buttonPress" /><Action name="Init" type="script" function="init" /><Action name="Navigate" type="navigate" /><Action name="exit" type="navigate" data="page:exit" /><Action name="AppCheck" type="ping" data="TheWeatherChannel" onsuccess="exit" /><Action name="AppCheckMulti" type="ping" data="NewsMultiview" onsuccess="exit" /><Action name="AppCheckMyMulti" type="ping" data="MyMultiview" onsuccess="exit" /><Action name="LoadApp" type="script" function="loadApp" /><Action name="LoadAppDelay" type="timeout" delay="5000" action="LoadApp" /><Event type="onenter" action="Init LoadAppDelay AppCheck AppCheckMulti AppCheckMyMulti" /></Actions>
+	</MrmlPage>
+</uidescription>

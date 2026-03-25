@@ -1,0 +1,49 @@
+﻿<ClientConfig>
+   <CmdLine>-diskreserve 40000 -disablesubtitles -EnterButtonForOptions -enablepipprogressbar -allowdeviceidoverhttp -teardownpicture -disabledolbytb11 -supportmanualdisasterrecovery -disableskipswhennotricks 1 -servicesubstitutionmaxage 6:00 -requiresecurepf true -disableadpostmix -NodeInactivityTimeout 22 -vodappchanneloptional -watchipaddresschange 120000 -peekdismisstimeout 15000</CmdLine>
+   <EnableOnNowGuide>FALSE</EnableOnNowGuide>
+   <BootstrapTimeoutParameters>
+      <BootstrapTimeoutDiscoveryRetryStage>7</BootstrapTimeoutDiscoveryRetryStage>
+      <BootstrapTimeoutDiscoveryRetryLimit>2</BootstrapTimeoutDiscoveryRetryLimit>
+   </BootstrapTimeoutParameters>
+   <Display1080pOutput enable="false"/>
+   <DHCPHostNamePrefix>uverse_</DHCPHostNamePrefix>
+   <SslCertRequestDelaySpreadMinutes>5</SslCertRequestDelaySpreadMinutes>
+   <AdvancedClosedCaptionsConfig>
+      <InstalledLanguages>eng,spa</InstalledLanguages>
+      <EnableCaptionLanguageSelect>true</EnableCaptionLanguageSelect>
+   </AdvancedClosedCaptionsConfig>
+   <AllowProgramWatchedEvents Enable="true"/>
+   <OptionsPanelOrdering>
+      <FullScreenTV>ClosedCaptions,FavoritesLists,AddRemoveFromFavorites,EditFavorites,AudioLanguage,AspectRatio,Separator,ChannelSearch</FullScreenTV>
+      <Guide>JumpToDayTime,FavoritesLists,AddRemoveFromFavorites,EditFavorites,BouquetMenus,GuideView,ChannelSearch,Separator,GuideSettings</Guide>
+   </OptionsPanelOrdering>
+   <ParentalControlMenuEntries>ADULT,CHANNEL,PURCHASE,RATINGS,USERTIME,UNRATED,APPPURCHASE,VODDVR</ParentalControlMenuEntries>
+   <AllowUserTimeLocks Enabled="true"/>
+   <USBConfig Enable="1"/>
+   <Personalization>
+      <CustomFieldNames>_lastSource,_PMediaSource</CustomFieldNames>
+   </Personalization>
+   <DvrExtraKeyRingWaitTimeoutSeconds default="10"/>
+   <NetworkConfig IGMPVersion="3" DefaultTOSValue="64"/>
+   <RemotePauseBufferDelaySeconds default="20"/>
+   <Unplugged>
+      <SignalLostTime>20</SignalLostTime>
+      <DisplayNotification>false</DisplayNotification>
+   </Unplugged>
+   <AVConfig>
+      <avautocorrectionforff1>0</avautocorrectionforff1>
+      <avautocorrectionforff2>3000</avautocorrectionforff2>
+      <avautocorrectionforff3>2000</avautocorrectionforff3>
+      <avautocorrectionforff4>0</avautocorrectionforff4>
+      <avautocorrectionforrw1>0</avautocorrectionforrw1>
+      <avautocorrectionforrw2>3000</avautocorrectionforrw2>
+      <avautocorrectionforrw3>2000</avautocorrectionforrw3>
+      <avautocorrectionforrw4>0</avautocorrectionforrw4>
+   </AVConfig>
+   <FavoriteChannelLists StickyMode="false" UseFixedNames="false" AllowReorder="false">
+      <MaxLists>5</MaxLists>
+   </FavoriteChannelLists>
+   <RecentList>
+      <LastBringsUpRecentList>false</LastBringsUpRecentList>
+   </RecentList>
+</ClientConfig>
